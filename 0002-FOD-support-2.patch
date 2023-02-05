@@ -1,0 +1,27 @@
+From 16b542fd6d29091eb6c96586caf7da82821666a1 Mon Sep 17 00:00:00 2001
+From: username <email.com>
+Date: Sun, 5 Feb 2023 02:23:05 +0100
+Subject: [PATCH 2/2] FOD support 2
+
+---
+ .../com/android/systemui/biometrics/UdfpsControllerOverlay.kt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt b/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt
+index 84de3d8872f6..4b89557fb9ea 100644
+--- a/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt
++++ b/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt
+@@ -102,7 +102,9 @@ class UdfpsControllerOverlay(
+         gravity = android.view.Gravity.TOP or android.view.Gravity.LEFT
+         layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
+         flags = (Utils.FINGERPRINT_OVERLAY_LAYOUT_PARAM_FLAGS or
+-          WindowManager.LayoutParams.FLAG_SPLIT_TOUCH)
++          WindowManager.LayoutParams.FLAG_SPLIT_TOUCH) or
++          WindowManager.LayoutParams.FLAG_DIM_BEHIND
++        dimAmount = 0.0f
+         privateFlags = WindowManager.LayoutParams.PRIVATE_FLAG_TRUSTED_OVERLAY
+         // Avoid announcing window title.
+         accessibilityTitle = " "
+-- 
+2.34.1
+
